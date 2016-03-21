@@ -64,7 +64,7 @@ def print_matrix( matrix ):
     s = ''
     for r in range( len( matrix[0] ) ):
         for c in range( len(matrix) ):
-            s+= str(matrix[c][r]) + ' '
+            s+= '\t' + str(matrix[c][r]) + ' '
         s+= '\n'
     print s
 
@@ -83,14 +83,10 @@ def scalar_mult( matrix, x ):
 
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    
     t = new_matrix( 4, 1 )
-
     for c in range( len( m2 ) ):        
-        
         for r in range(4):
             t[0][r] = m2[c][r]
-            
         for r in range(4):
             m2[c][r] = m1[0][r] * t[0][0] + m1[1][r] * t[0][1] + m1[2][r] * t[0][2] + m1[3][r] * t[0][3]
 
